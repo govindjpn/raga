@@ -1,0 +1,17 @@
+# 
+version_info:
+  version: "0.1.0"
+  author: Govind
+  owner: KIKU Corporation
+
+# features 
+insurer: "<Insurance Company Name>"
+insurer_address:  "<Insurance Company Address>"
+policyholder_name: "<Policy Holder Name>"
+policyholder_address: "<Policy Holder Address>"
+Location : "<Location of the risk>"
+policy_number: "<policy number>"
+inception_date: "<Policy start date>" 
+expiry_date: "<Policy End date"
+due_date: "<Due Date>"
+

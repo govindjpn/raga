@@ -1,0 +1,12 @@
+# 
+version_info:
+  version: "0.1.0"
+  author: Govind
+  owner: KIKU Corporation
+
+# features 
+domicile: 
+  country: 
+  state:
+summary: "<Provide summary within 50 words>"
+
