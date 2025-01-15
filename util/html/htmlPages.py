@@ -8,9 +8,9 @@ Copyright           : All rights Reserved to KIKU
 '''
 
 import streamlit as st 
-from raga.util.html.htmlTemplates import css, bot_template, user_template, pdf_display
-from raga.util import session 
-from raga.util import user
+from util.html.htmlTemplates import css, bot_template, user_template, pdf_display
+from util import session 
+from util import user
 
 
 #headerSection = st.container()

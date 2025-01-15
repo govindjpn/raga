@@ -9,7 +9,7 @@ Copyright           : All rights Reserved to KIKU
 
 #import streamlit as st 
 from dotenv import load_dotenv
-from PyPDF2 import PdfReader
+
 
 
 #from langchain.vectorstores import FAISS
@@ -19,20 +19,20 @@ from langchain.chat_models import ChatOpenAI
 #from langchain_community.llms import OpenAI
 #from langchain_community.llms import HuggingFaceHub
 # from langchain_community.chat_models.huggingface import ChatHuggingFace
-from raga.util import log, session, pdf 
+from util import log, session, pdf 
 
-from raga.util.html import htmlPages as html 
+from util.html import htmlPages as html 
 from util.db import sql_docs as docs
 
 
 
 #from raga.util.process.rag_01_chunking import get_chunks
-from raga.util.process.rag_02_embedding import get_embeddings, get_vectortore
+from util.process.rag_02_embedding import get_embeddings, get_vectortore
 #from raga.util.process.rag_03_semantic_search import get_search_result
 #from raga.util.process.rag_04_reranking import get_reranking
 #from raga.util.process.rag_05_prompting import get_prompt
 #from raga.util.process.rag_06_consolidation import get_consolidation
-from raga.util.process.rag_07_conversation import answer_question # get_conversation_chain, answer_question
+from util.process.rag_07_conversation import answer_question # get_conversation_chain, answer_question
 
 
 def show_pdf (id, **kwargs): 

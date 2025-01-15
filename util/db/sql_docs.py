@@ -6,14 +6,14 @@ Created             : Oct 2024
 Purpose             : Docs related SQL functions    
 Copyright           : All rights Reserved to KIKU 
 '''
-import bcrypt
+
 import traceback
 import json
 
 
-import raga.util.db.sql_basic as sql 
-import raga.util.doc_definition as doc
-import raga.util.log as log
+import util.db.sql_basic as sql 
+import util.doc_definition as doc
+import util.log as log
 
 
 def quoted(text) : 
