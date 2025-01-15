@@ -142,3 +142,15 @@ INFO:root:Program Start
 DEBUG:root:3_view: pdf_path='app/static/docs/captives_letter_credit.pdf' doc_id=2 page_num=0
 DEBUG:root:3_view: pdf_path='app/static/docs/captives_letter_credit.pdf' doc_id=2 page_num=0
 DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:11434
+DEBUG:root:Selected Row : {'selection': {'rows': [], 'columns': []}}
+DEBUG:root:Selected File : None
+DEBUG:root:3_view: pdf_path='app/static/docs/captives_letter_credit.pdf' doc_id=2 page_num=0
+DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
+DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
+DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
+DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
+DEBUG:urllib3.connectionpool:http://localhost:11434 "POST /api/generate HTTP/11" 200 None
