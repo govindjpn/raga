@@ -117,6 +117,8 @@ def show_table() :
         if selected_file is not None and len(selected_file) > 0 : 
             log.log_debug(f"ID : {selected_id=} {selected_file=}")
             session.set_value(session.PDF_FILE_NAME, selected_file)
+            session.set_value(session.DOC_ID, selected_id)
+            
             html.show_view_button()
             if (summary := docs.sql_get_doc_summary(selected_id)) is not None:
                 show_summary(summary)

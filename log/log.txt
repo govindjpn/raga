@@ -126,3 +126,19 @@ DEBUG:root:ID : selected_id=2 selected_file='captives_letter_credit.pdf'
 INFO:root:Program Start
 INFO:root:Program Start
 INFO:root:Program Start
+INFO:root:Program Start
+DEBUG:root:3_view: pdf_path='app/static/docs/captives_letter_credit.pdf' doc_id=None page_num=0
+INFO:root:Program Start
+DEBUG:root:Selected Row : {'selection': {'rows': [], 'columns': []}}
+DEBUG:root:Selected File : None
+DEBUG:root:Selected Row : {'selection': {'rows': [1], 'columns': []}}
+DEBUG:root:Selected File : captives_letter_credit.pdf
+DEBUG:root:ID : selected_id=2 selected_file='captives_letter_credit.pdf'
+DEBUG:root:Selected Row : {'selection': {'rows': [1], 'columns': []}}
+DEBUG:root:Selected File : captives_letter_credit.pdf
+DEBUG:root:ID : selected_id=2 selected_file='captives_letter_credit.pdf'
+DEBUG:root:3_view: pdf_path='app/static/docs/captives_letter_credit.pdf' doc_id=2 page_num=0
+INFO:root:Program Start
+DEBUG:root:3_view: pdf_path='app/static/docs/captives_letter_credit.pdf' doc_id=2 page_num=0
+DEBUG:root:3_view: pdf_path='app/static/docs/captives_letter_credit.pdf' doc_id=2 page_num=0
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:11434

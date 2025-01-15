@@ -78,17 +78,16 @@ def view_pdf(pdf_path):
 
 if __name__ == "__main__":     
 
-    '''
-    with html.st_sidebar : 
-        yaml_file = html.file_uploader("Upload the template and click on Extract", type = ["yaml"], accept_multiple_files=False)
-        yaml_button = html.get_button("Extract")
-    '''
+    # with html.st_sidebar : 
+    #     yaml_file = html.file_uploader("Upload the template and click on Extract", type = ["yaml"], accept_multiple_files=False)
+    #     yaml_button = html.get_button("Extract")
                 
     if (pdf_file_name := session.get_value(session.PDF_FILE_NAME)) is not None: 
         pdf_file_path = os.path.join(config.HOME + "\\static\\docs",pdf_file_name)
         pdf_path = "app/static/docs/" + pdf_file_name
         doc_id = session.get_value(session.DOC_ID)
         page_num = session.get_value(session.PDF_PAGE_NUM)
+        log.log_debug(f"3_view: {pdf_path=} {doc_id=} {page_num=}")
         if page_num is not None and page_num > 0 : 
             pdf_path += f"#page={page_num}" 
         #print(f"3_view: {pdf_path}")
