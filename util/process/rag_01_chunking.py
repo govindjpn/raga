@@ -30,7 +30,7 @@ Copyright           : All rights Reserved to KIKU
 
 from langchain.text_splitter import CharacterTextSplitter
 
-import raga.util.log as log 
+import util.log as log 
 from util.db import sql_docs as docs 
 
 

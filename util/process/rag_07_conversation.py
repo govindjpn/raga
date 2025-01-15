@@ -8,19 +8,19 @@ Copyright           : All rights Reserved to KIKU
 '''
 #from langchain.memory import ConversationBufferMemory
 
-from raga.util import log, session 
+from util import log, session 
 #from raga.util.models import rag_llama31 #vrag_openai   # , rag_huggingface, rag_gemma, 
-from raga.util.process import rag_01_chunking as chunk 
-from raga.util.process import rag_02_embedding as embed 
-from raga.util.process import rag_03_semantic_search as search 
-from raga.util.process import rag_04_reranking as rerank 
-from raga.util.process import rag_05_prompting as prompt 
-from raga.util.process import rag_06_consolidation as consol 
+from util.process import rag_01_chunking as chunk 
+from util.process import rag_02_embedding as embed 
+from util.process import rag_03_semantic_search as search 
+from util.process import rag_04_reranking as rerank 
+from util.process import rag_05_prompting as prompt 
+from util.process import rag_06_consolidation as consol 
 
-from raga.util.models import rag_llama31 as l31 
-from raga.util.models import rag_openai as oai 
+from util.models import rag_llama31 as l31 
+from util.models import rag_openai as oai 
 
-from raga.util.vector import vectordb as vdb 
+from util.vector import vectordb as vdb 
 
 
 

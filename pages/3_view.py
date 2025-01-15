@@ -9,10 +9,10 @@ Copyright           : All rights Reserved to KIKU
 
 import os 
 
-from raga.util import session, log, config
-from raga.util.html import htmlPages as html
-from raga.util.process.rag_10_summarize import summarize_file
-from raga.util.process.rag_11_classify import classify_file
+from util import session, log, config
+from util.html import htmlPages as html
+from util.process.rag_10_summarize import summarize_file
+from util.process.rag_11_classify import classify_file
 from util.db import sql_docs as docs
 
 pdf_tab, json_tab, graph_tab, info_tab = html.tabs(["PDF", "JSON", "GRAPH", "INFO"])

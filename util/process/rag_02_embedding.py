@@ -7,7 +7,7 @@ Purpose             : Embedding Algorithms
 Copyright           : All rights Reserved to KIKU 
 '''
 
-import raga.util.log as log 
+import util.log as log 
 
 from langchain_community.embeddings import OpenAIEmbeddings 
 #from langchain_community.embeddings import HuggingFaceInstructEmbeddings

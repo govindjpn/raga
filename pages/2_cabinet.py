@@ -10,19 +10,19 @@ Copyright           : All rights Reserved to KIKU
 import streamlit as st 
 
 
-from raga.util import session, log, pdf
-from raga.util.html import htmlPages as html 
+from util import session, log, pdf
+from util.html import htmlPages as html 
 from util.db import sql_docs as docs
 
 
 
-from raga.util.process.rag_01_chunking import get_chunks
-from raga.util.process.rag_02_embedding import get_embeddings  # , get_vectortore
-#from raga.util.process.rag_07_conversation import get_conversation_chain
+from util.process.rag_01_chunking import get_chunks
+from util.process.rag_02_embedding import get_embeddings  # , get_vectortore
+#from util.process.rag_07_conversation import get_conversation_chain
 
-from raga.util.vector import vectordb as vdb
+from util.vector import vectordb as vdb
 
-#from raga.util.models import rag_llama31 as llm
+#from util.models import rag_llama31 as llm
 
 col_docs, col_summary = html.columns([4, 1])
 
