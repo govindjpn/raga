@@ -82,7 +82,7 @@ bot_template = '''
 <div class="chat-message bot">
     <div class="avatar">
         <i class="bi bi-chat-square-heart-fill"></i>
-        <img class="img-fluid" src="./app/static/images/raga.png" /> 
+        <img class="img-fluid" src="./app/static/images/foi.png" /> 
     </div>
     <div class="message"> {{MSG}}</div>
 </div>

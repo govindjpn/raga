@@ -21,6 +21,7 @@ def load_questions(question_file):
 
 def show_chat_history(container, chat_history): 
     with container : 
+        container.empty()
         for i, message in enumerate(chat_history): 
             if i%2 == 0 : 
                 html.show_user(message)
@@ -96,6 +97,10 @@ def show_questions ():
 
 
 if __name__ == "__main__": 
-    html.switch_page()
-    show_questions()
+    
+    if not (logged_in := session.get_value(session.LOGGED_IN)):
+        html.show_error ("Please login through the login page")
+    else :
+        html.switch_page()
+        show_questions()
 

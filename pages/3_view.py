@@ -7,9 +7,7 @@ Purpose             : PDF Viewer of FOI
 Copyright           : All rights Reserved to KIKU 
 '''
 
-import base64 
 import os 
-import yaml
 
 from raga.util import session, log, config
 from raga.util.html import htmlPages as html
