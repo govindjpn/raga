@@ -8,8 +8,8 @@ Copyright           : All rights Reserved to KIKU
 '''
 
 import streamlit as st
-from raga.util import session 
-from raga.util.html import htmlPages as html
+from util import session 
+from util.html import htmlPages as html
  
 
 def app(): 
