@@ -3,14 +3,14 @@ import glob
 import json 
 
 import yaml
-from foi.util import config as cfg 
+from raga.util import config as cfg 
 yaml_file = cfg.HOME + cfg.path[cfg.YAML] + cfg.filename[cfg.YAML]
 with open(yaml_file, 'r') as file : 
     output_format_dict = yaml.safe_load(file)
 print(output_format_dict)
 
 def test_classify (): 
-    from foi.util.process.rag_11_classify import classify_file
+    from raga.util.process.rag_11_classify import classify_file
 
     pdf_folder =  "C:\\Personal\\KIKU\\insuranceFoundationModel\\captives\\Regulatory\\southCarolina\\"
     of = open(pdf_folder + "JSON.txt", "w", encoding="utf-8")
@@ -46,7 +46,7 @@ if __name__ == "__main__":
     #result = test_classify()
     #print(result)
 
-    from foi.util.db import foi_sql_docs as docs
+    from util.db import sql_docs as docs
     docs_df = docs.sql_get_doc_list("govindjpn@gmail.com")
     country_state_set = set(list(zip(docs_df.country, docs_df.state)))
     print (country_state_set)

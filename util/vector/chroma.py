@@ -7,7 +7,7 @@ from langchain_chroma.vectorstores import Chroma
 from langchain_community.embeddings.openai import OpenAIEmbeddings
 import ollama 
 
-from foi.util import log
+from raga.util import log
 
 '''
 By default, Chroma uses Sentence Transformers all-MiniLM-L6-v2 model to create embeddings 
@@ -22,7 +22,7 @@ oai_embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
 vectorstore = Chroma("langchain_store", embeddings)
 oai_vectorstore = Chroma("langchain_store", oai_embeddings)
 retriever = vectorstore.as_retriever()
-from foi.util import config as cfg
+from raga.util import config as cfg
 
 chromadb_path = cfg.HOME + cfg.path[cfg.CHROMA_DB]  
 client = chromadb.PersistentClient(

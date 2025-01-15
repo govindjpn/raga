@@ -1,7 +1,7 @@
 import chromadb
 from chromadb.config import DEFAULT_TENANT, DEFAULT_DATABASE, Settings
 
-from foi.util import config as cfg
+from raga.util import config as cfg
 
 chromadb_path = cfg.HOME + cfg.path[cfg.CHROMA_DB]  
 client = chromadb.PersistentClient(

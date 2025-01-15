@@ -8,12 +8,12 @@ Copyright           : All rights Reserved to KIKU
 '''
 import bcrypt
 import traceback
-import pandas as pd
 import json
 
 
-import foi.util.db.foi_sql_basic as sql 
-import foi.util.doc_definition as doc
+import raga.util.db.sql_basic as sql 
+import raga.util.doc_definition as doc
+import raga.util.log as log
 
 
 def quoted(text) : 
@@ -109,7 +109,11 @@ def sql_get_doc_template(doc_id):
 
 def sql_get_doc_detail(doc_id): 
     select_str = "select doc_name, doc_page_count, doc_type, doc_summary from foi_doc_detail  where doc_id = " + str(doc_id)  
-    return sql.get_one(select_str)
+    row = sql.get_one(select_str)
+    if row is None :
+        log.log_error (f"sql_get_doc_detail : {doc_id} not found")
+        return None
+    return row
 
 def sql_get_doc_owner(doc_id): 
     select_str = "select user_id from foi_doc_access  where doc_id = " + str(doc_id) + " and doc_access = 'OWNER' " 
@@ -147,8 +151,9 @@ def sql_get_doc_list(user_id):
     if rows is None:
         return None 
     column_names = [ "id", "name","page_count", "doc_type", "owner"]  ## "delete"
-    doc_df = pd.DataFrame(columns=column_names)
-    
+    #doc_df = pd.DataFrame(columns=column_names)
+    doc_list = []
+
     for row in rows : 
         doc_detail = sql_get_doc_detail(row[0])
         doc_owner = sql_get_doc_owner(row[0])
@@ -156,8 +161,9 @@ def sql_get_doc_list(user_id):
         row = {"id": row[0], "name": doc_detail[0], "page_count": doc_detail[1], "doc_type": doc_detail[2], 
                "owner": doc_owner[0], "meta": doc_meta
                }   ## , "delete" : 1 if doc_owner[0] == user_id else 0} ## Only the owner can delete 
-        doc_df.loc[len(doc_df)] = row
-    return doc_df 
+        # doc_df.loc[len(doc_df)] = row
+        doc_list.append(row)
+    return doc_list # doc_df 
 
 def sql_get_doc_summary (doc_id : int)  -> str: 
     try : 

@@ -7,7 +7,7 @@ Purpose             : Embedding Algorithms
 Copyright           : All rights Reserved to KIKU 
 '''
 
-import foi.util.log as log 
+import raga.util.log as log 
 
 from langchain_community.embeddings import OpenAIEmbeddings 
 #from langchain_community.embeddings import HuggingFaceInstructEmbeddings
@@ -15,10 +15,10 @@ from langchain_chroma.vectorstores import Chroma
 import ollama 
 
 
-#import foi.util.models.rag_huggingface as rag_huggingface 
-#import foi.util.models.rag_gemma as rag_gemma
+#import raga.util.models.rag_huggingface as rag_huggingface 
+#import raga.util.models.rag_gemma as rag_gemma
 
-from foi.util.vector import vectordb as vdb
+from raga.util.vector import vectordb as vdb
 
 def get_embeddings(model, vectordb, text_chunks):
     log.log_write(f"get_embedding ->:: {model=} {vectordb=} {type(text_chunks)} {len(text_chunks)}")

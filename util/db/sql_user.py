@@ -7,7 +7,7 @@ Purpose             : user related SQL functions
 Copyright           : All rights Reserved to KIKU 
 '''
 
-import foi.util.db.foi_sql_basic as sql 
+import util.db.sql_basic as sql 
 import bcrypt 
 
 def sql_add_user(user_id, user_name, user_password, user_role, user_group, user_external_id) : 

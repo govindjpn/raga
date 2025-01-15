@@ -1,5 +1,5 @@
 '''
-Filename            : 1_foi.py
+Filename            : 1_raga.py
 Path                : util 
 Author              : KIKUGO 
 Created             : Oct 2024
@@ -19,24 +19,20 @@ from langchain.chat_models import ChatOpenAI
 #from langchain_community.llms import OpenAI
 #from langchain_community.llms import HuggingFaceHub
 # from langchain_community.chat_models.huggingface import ChatHuggingFace
-import pandas as pd 
-import pickle
-import os
-from foi.util import log, session, pdf 
+from raga.util import log, session, pdf 
 
-from foi.util.html.htmlTemplates import css, bot_template, user_template, pdf_display
-from foi.util.html import htmlPages as html 
-from foi.util.db import foi_sql_docs as docs
+from raga.util.html import htmlPages as html 
+from util.db import sql_docs as docs
 
 
 
-#from foi.util.process.rag_01_chunking import get_chunks
-from foi.util.process.rag_02_embedding import get_embeddings, get_vectortore
-#from foi.util.process.rag_03_semantic_search import get_search_result
-#from foi.util.process.rag_04_reranking import get_reranking
-#from foi.util.process.rag_05_prompting import get_prompt
-#from foi.util.process.rag_06_consolidation import get_consolidation
-from foi.util.process.rag_07_conversation import answer_question # get_conversation_chain, answer_question
+#from raga.util.process.rag_01_chunking import get_chunks
+from raga.util.process.rag_02_embedding import get_embeddings, get_vectortore
+#from raga.util.process.rag_03_semantic_search import get_search_result
+#from raga.util.process.rag_04_reranking import get_reranking
+#from raga.util.process.rag_05_prompting import get_prompt
+#from raga.util.process.rag_06_consolidation import get_consolidation
+from raga.util.process.rag_07_conversation import answer_question # get_conversation_chain, answer_question
 
 
 def show_pdf (id, **kwargs): 
@@ -166,7 +162,7 @@ def main() :
     with html.st_sidebar: 
         html.show_markdown('<img src="./app/static/images/foi.png" height="50px" />', unsafe_allow_html=True)
         #model = st.selectbox("Select your Model", ("OpenAI", "Gemma", "HuggingFace", "Llama3.1"))
-        embedding_model = html.selectbox("Select your Embedding Model", ( "Llama3.1"))
+        embedding_model = html.selectbox("Select your Embedding Model", (  "OpenAI", "Llama3.1"))
         vectordb = html.selectbox("Select your VectorDB", ("Chroma"))  
         chat_model = html.selectbox("Select your Chat Model", ( "OpenAI", "Llama3.1"))
         RAG_flag = html.get_checkbox("RAG Flag")

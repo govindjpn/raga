@@ -34,7 +34,7 @@ filename = \
     {CHROMA_DB        : '',
      DB               : 'docs.db',
      DOCS             : '', 
-     IMAGES           : 'foi.png',
+     IMAGES           : 'raga.png',
      LOG              : 'log.txt',
      MODEL            : 'model.csv'
   }

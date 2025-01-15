@@ -8,7 +8,7 @@ from langchain.chains.llm import LLMChain
 # Create full chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 
-from foi.util import log
+from raga.util import log
 
 
 def convert_to_prompt(format_dict): 

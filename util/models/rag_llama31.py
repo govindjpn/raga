@@ -36,7 +36,7 @@ llm = ChatOllama(
     )
 
 
-import foi.util.log as log 
+import raga.util.log as log 
 
 
 def get_conversation_chain(vectorstore) :

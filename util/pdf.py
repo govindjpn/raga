@@ -4,7 +4,7 @@ import os
 from PyPDF2 import PdfReader
 import pandas as pd 
 
-from foi.util import log, session, doc_definition as doc
+from raga.util import log, session, doc_definition as doc
 
 
 def get_pdf_text(pdf_file, store_pdf = True) -> dict: 

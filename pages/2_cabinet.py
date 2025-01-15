@@ -8,22 +8,21 @@ Copyright           : All rights Reserved to KIKU
 '''
 
 import streamlit as st 
-import pandas as pd 
-from Crypto.Cipher import AES
 
 
-from foi.util import session, log, pdf
-from foi.util.html import htmlPages as html 
-from foi.util.db import foi_sql_docs as docs
+from raga.util import session, log, pdf
+from raga.util.html import htmlPages as html 
+from util.db import sql_docs as docs
 
 
-from foi.util.process.rag_01_chunking import get_chunks
-from foi.util.process.rag_02_embedding import get_embeddings  # , get_vectortore
-#from foi.util.process.rag_07_conversation import get_conversation_chain
 
-from foi.util.vector import vectordb as vdb
+from raga.util.process.rag_01_chunking import get_chunks
+from raga.util.process.rag_02_embedding import get_embeddings  # , get_vectortore
+#from raga.util.process.rag_07_conversation import get_conversation_chain
 
-#from foi.util.models import rag_llama31 as llm
+from raga.util.vector import vectordb as vdb
+
+#from raga.util.models import rag_llama31 as llm
 
 col_docs, col_summary = html.columns([4, 1])
 
@@ -85,14 +84,14 @@ def show_table() :
         if user_id is None: 
             st.error("Please Login again to see the file list ")
             return 
-        if (docs_df := docs.sql_get_doc_list(user_id)) is None:   
+        if (docs_list := docs.sql_get_doc_list(user_id)) is None:   
             st.error("No files to show; please upload a file using the read button")
             return 
         #docs_addl_df = docs.sql_get_doc_list(user_id, "ADDL")
         #state_set = sorted(set(list(docs_addl_df["state"])))
 
-        select_event = st.dataframe(
-                docs_df,
+        selected_row = st.dataframe(
+                docs_list,
                 column_config={
                     "name" : st.column_config.Column(
                                 "Document File Name",
@@ -107,15 +106,19 @@ def show_table() :
                 selection_mode="single-row",
                 on_select="rerun"
                 )
-        selected_file = docs_df.iloc[select_event.selection.get('rows',[]), 1] 
-        selected_id = docs_df.iloc[select_event.selection.get('rows',[]), 0] 
+        log.log_debug(f"Selected Row : {str(selected_row)}")
+        if selected_row.selection.rows  is not None and len(selected_row.selection.rows) > 0 :
+            selected_file = docs_list[selected_row.selection.rows[0]] ["name"] 
+            selected_id = docs_list[selected_row.selection.rows[0]]["id"] 
+        else : 
+            selected_file = None
             
-        print (f"Selected File : {selected_file}")
+        log.log_debug (f"Selected File : {selected_file}")
         if selected_file is not None and len(selected_file) > 0 : 
-            print(f"ID : {selected_id.iloc[0]} {type(selected_file.iloc[0])}")
-            session.set_value(session.PDF_FILE_NAME, selected_file.iloc[0])
+            log.log_debug(f"ID : {selected_id=} {selected_file=}")
+            session.set_value(session.PDF_FILE_NAME, selected_file)
             html.show_view_button()
-            if (summary := docs.sql_get_doc_summary(selected_id.iloc[0])) is not None:
+            if (summary := docs.sql_get_doc_summary(selected_id)) is not None:
                 show_summary(summary)
 
 def show_summary(summary=None): 

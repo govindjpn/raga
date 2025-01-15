@@ -8,9 +8,9 @@ Copyright           : All rights Reserved to KIKU
 '''
 
 import streamlit as st 
-from foi.util.html.htmlTemplates import css, bot_template, user_template, pdf_display
-from foi.util import session 
-from foi.util import user
+from raga.util.html.htmlTemplates import css, bot_template, user_template, pdf_display
+from raga.util import session 
+from raga.util import user
 
 
 #headerSection = st.container()
@@ -70,7 +70,7 @@ def file_uploader(label, type, accept_multiple_files):
 
 def show_title(): 
     #with headerSection: 
-    st.title ("Friends of Insurance")
+    st.title ("RAG Chat with your Documents")
 
 def set_page_layout(layout):    
     st.set_page_config(layout=layout)

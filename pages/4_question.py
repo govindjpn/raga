@@ -7,10 +7,10 @@ Purpose             : Question Loader of FOI
 Copyright           : All rights Reserved to KIKU 
 '''
 
-from foi.util import log, session 
-from foi.util.html import htmlPages as html  
-from foi.util.db import foi_sql_docs as docs
-from foi.util.process import rag_07_conversation as rag 
+from raga.util import log, session 
+from raga.util.html import htmlPages as html  
+from util.db import sql_docs as docs
+from raga.util.process import rag_07_conversation as rag 
 
 
 def load_questions(question_file): 

@@ -7,7 +7,7 @@ import bcrypt
 
 import smtplib
 from email.mime.text import MIMEText
-from foi.util.db.foi_sql_user import sql_get_user, sql_add_user
+from util.db.sql_user import sql_get_user, sql_add_user
 
 #user_dict = pickle.load(open("user_dict.pkl","rb"))
 #def sql_add_user (email, hashedpw, username,active_flag) :

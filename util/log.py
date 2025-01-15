@@ -10,7 +10,7 @@ Copyright           : All rights Reserved to KIKU
 import logging
 from datetime import datetime as dt
 
-from foi.util import config as cfg
+from raga.util import config as cfg
 
 
 

@@ -4,7 +4,7 @@ import glob
 
 '''
 def test_summarize (): 
-    from foi.util.process.rag_11_classify import summarize_file
+    from raga.util.process.rag_11_classify import summarize_file
 
     pdf_folder =  "C:\\Personal\\KIKU\\insuranceFoundationModel\\captives\\Regulatory\\southCarolina\\"
     of = open(pdf_folder + "summary.txt", "w", encoding="utf-8")
@@ -39,7 +39,7 @@ def test_summarize ():
 
 
 def test_classify (): 
-    from foi.util.process.rag_11_classify import classify_file
+    from raga.util.process.rag_11_classify import classify_file
 
     pdf_folder =  "C:\\Personal\\KIKU\\insuranceFoundationModel\\captives\\Regulatory\\southCarolina\\"
     of = open(pdf_folder + "JSON.txt", "w", encoding="utf-8")

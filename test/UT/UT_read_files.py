@@ -1,9 +1,9 @@
 
-from foi.util.process.rag_01_chunking import get_chunks
-from foi.util.process.rag_02_embedding import get_embeddings 
+from raga.util.process.rag_01_chunking import get_chunks
+from raga.util.process.rag_02_embedding import get_embeddings 
 
-from foi.util import session, log, pdf 
-from foi.util.vector import vectordb as vdb
+from raga.util import session, log, pdf 
+from raga.util.vector import vectordb as vdb
 
 def read_files(pdf_file, model, vectordb): 
     

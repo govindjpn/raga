@@ -30,8 +30,8 @@ Copyright           : All rights Reserved to KIKU
 
 from langchain.text_splitter import CharacterTextSplitter
 
-import foi.util.log as log 
-from foi.util.db import foi_sql_docs as docs 
+import raga.util.log as log 
+from util.db import sql_docs as docs 
 
 
 def get_chunks (doc_id, raw_text) :  

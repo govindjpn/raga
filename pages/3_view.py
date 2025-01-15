@@ -11,11 +11,11 @@ import base64
 import os 
 import yaml
 
-from foi.util import session, log, config
-from foi.util.html import htmlPages as html
-from foi.util.process.rag_10_summarize import summarize_file
-from foi.util.process.rag_11_classify import classify_file
-from foi.util.db import foi_sql_docs as docs
+from raga.util import session, log, config
+from raga.util.html import htmlPages as html
+from raga.util.process.rag_10_summarize import summarize_file
+from raga.util.process.rag_11_classify import classify_file
+from util.db import sql_docs as docs
 
 pdf_tab, json_tab, graph_tab, info_tab = html.tabs(["PDF", "JSON", "GRAPH", "INFO"])
 
@@ -26,6 +26,8 @@ def view_graph(graph) :
 def view_json(doc_id, json=None) :
     with json_tab : 
         if json is None :
+            pass
+            '''
             template_list = docs.get_template_list()
             selected_template = html.get_selectbox("Select Template", template_list)
             if html.get_button("Classify"):
@@ -33,6 +35,7 @@ def view_json(doc_id, json=None) :
                 template_yaml = yaml.safe_load(template_details)
                 json = classify_file(pdf_file_path, template_yaml)
                 docs.sql_update_json(doc_id, json)
+            '''
         else :
             html.show_message(json)
 
@@ -75,9 +78,11 @@ def view_pdf(pdf_path):
 
 if __name__ == "__main__":     
 
+    '''
     with html.st_sidebar : 
         yaml_file = html.file_uploader("Upload the template and click on Extract", type = ["yaml"], accept_multiple_files=False)
         yaml_button = html.get_button("Extract")
+    '''
                 
     if (pdf_file_name := session.get_value(session.PDF_FILE_NAME)) is not None: 
         pdf_file_path = os.path.join(config.HOME + "\\static\\docs",pdf_file_name)

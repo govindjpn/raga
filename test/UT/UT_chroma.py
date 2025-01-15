@@ -1,9 +1,9 @@
 from langchain.memory import ConversationBufferMemory
 
 ## sample conversation using Chroma DB 
-from foi.util.models import rag_llama31
-from foi.util.vector import chroma 
-from foi.util.process import rag_02_embedding as embed 
+from raga.util.models import rag_llama31
+from raga.util.vector import chroma 
+from raga.util.process import rag_02_embedding as embed 
 
 
 def sample_conversation_test():
