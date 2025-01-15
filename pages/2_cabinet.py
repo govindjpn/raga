@@ -67,7 +67,7 @@ def show_load_menu() :
         html.show_message(f"Embedding : {embedding_model} Vector DB : {vectordb}")
         pdf_file = html.file_uploader ("Upload your document here and click on Read", type=["pdf", "txt"], 
                                        accept_multiple_files=False)
-        print(f"File : {pdf_file}")
+        log.log_debug(f"show_load_menu File : {pdf_file}")
         if not pdf_file :
                 st.error("Only PDF / TXT files supported. Please load the file again")
         else : 
@@ -133,8 +133,11 @@ def show_summary(summary=None):
             
 if __name__ == "__main__" :
 
-    show_load_menu()
-    show_table()
+    if not (logged_in := session.get_value(session.LOGGED_IN)):
+        html.show_error ("Please login through the login page")
+    else :
+        show_load_menu()
+        show_table()
    
 
 

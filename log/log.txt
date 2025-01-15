@@ -1,5 +1,4 @@
 INFO:root:Program Start
-INFO:root:Program Start
 DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
 DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
 INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-mpnet-base-v2
@@ -36,121 +35,17 @@ DEBUG:chromadb.config:Starting component LocalSegmentManager
 DEBUG:chromadb.config:Starting component SegmentAPI
 DEBUG:chromadb.api.segment:Collection docs already exists, returning existing collection.
 DEBUG:chromadb.api.segment:Collection docs already exists, returning existing collection.
-DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
-DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
+DEBUG:root:show_load_menu File : None
+DEBUG:root:Selected Row : {'selection': {'rows': [], 'columns': []}}
+DEBUG:root:Selected File : None
 DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): us.i.posthog.com:443
-DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
-DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
-INFO:root:Program Start
-DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
-DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
 DEBUG:urllib3.connectionpool:https://us.i.posthog.com:443 "POST /batch/ HTTP/11" 200 15
 DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
 DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
+DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
 INFO:root:Program Start
-DEBUG:root:Selected Row : {'selection': {'rows': [], 'columns': []}}
-INFO:root:Program Start
-DEBUG:root:Selected Row : {'selection': {'rows': [], 'columns': []}}
-DEBUG:root:Selected File : None
-DEBUG:root:Selected Row : {'selection': {'rows': [0], 'columns': []}}
-DEBUG:root:Selected File : NewJersey-captivereferenceguide.pdf
-DEBUG:root:ID : selected_id=1 selected_file='NewJersey-captivereferenceguide.pdf'
-DEBUG:root:Selected Row : {'selection': {'rows': [], 'columns': []}}
-DEBUG:root:Selected File : None
-DEBUG:root:Selected Row : {'selection': {'rows': [], 'columns': []}}
-DEBUG:root:Selected File : None
-DEBUG:root:15/01/2025 16:58:39 365775 get_pdf_text:: UploadedFile(file_id='67b2bd31-27bc-4d3e-aa6c-50c735e56a9f', name='captives_letter_credit.pdf', type='application/pdf', size=14665, _file_urls=file_id: "67b2bd31-27bc-4d3e-aa6c-50c735e56a9f"
-upload_url: "/_stcore/upload_file/8e7ee00e-cb46-49c5-8fa4-db50a7ef5d68/67b2bd31-27bc-4d3e-aa6c-50c735e56a9f"
-delete_url: "/_stcore/upload_file/8e7ee00e-cb46-49c5-8fa4-db50a7ef5d68/67b2bd31-27bc-4d3e-aa6c-50c735e56a9f"
-) #pages = 1
-DEBUG:root:15/01/2025 16:58:39 393976 Entering get_text_chunks :: 2476
-DEBUG:root:15/01/2025 16:58:39 426863 Exiting get_text_chunks :: {0: 756, 1: 875, 2: 994, 3: 211}
-DEBUG:root:15/01/2025 16:58:39 426863 get_embedding ->:: model='Llama3.1' vectordb='Chroma' <class 'list'> 4
-DEBUG:httpcore.connection:connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
-DEBUG:httpcore.connection:connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000234810139E0>
-DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:send_request_headers.complete
-DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:send_request_body.complete
-DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Wed, 15 Jan 2025 07:58:42 GMT'), (b'Transfer-Encoding', b'chunked')])
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/embeddings "HTTP/1.1 200 OK"
-DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:receive_response_body.complete
-DEBUG:httpcore.http11:response_closed.started
-DEBUG:httpcore.http11:response_closed.complete
-DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:send_request_headers.complete
-DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:send_request_body.complete
-DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Wed, 15 Jan 2025 07:58:44 GMT'), (b'Transfer-Encoding', b'chunked')])
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/embeddings "HTTP/1.1 200 OK"
-DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:receive_response_body.complete
-DEBUG:httpcore.http11:response_closed.started
-DEBUG:httpcore.http11:response_closed.complete
-DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:send_request_headers.complete
-DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:send_request_body.complete
-DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Wed, 15 Jan 2025 07:58:48 GMT'), (b'Transfer-Encoding', b'chunked')])
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/embeddings "HTTP/1.1 200 OK"
-DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:receive_response_body.complete
-DEBUG:httpcore.http11:response_closed.started
-DEBUG:httpcore.http11:response_closed.complete
-DEBUG:httpcore.http11:send_request_headers.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:send_request_headers.complete
-DEBUG:httpcore.http11:send_request_body.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:send_request_body.complete
-DEBUG:httpcore.http11:receive_response_headers.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Wed, 15 Jan 2025 07:58:49 GMT'), (b'Transfer-Encoding', b'chunked')])
-INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/embeddings "HTTP/1.1 200 OK"
-DEBUG:httpcore.http11:receive_response_body.started request=<Request [b'POST']>
-DEBUG:httpcore.http11:receive_response_body.complete
-DEBUG:httpcore.http11:response_closed.started
-DEBUG:httpcore.http11:response_closed.complete
-DEBUG:root:15/01/2025 16:58:49 354252 get_vectorstore <- :: <class 'list'>  4
-DEBUG:root:15/01/2025 16:58:49 354252 add_embeddings ==> vectordb='Chroma' ids=['2-0', '2-1', '2-2', '2-3']
-DEBUG:chromadb.config:Starting component PersistentLocalHnswSegment
-DEBUG:root:15/01/2025 16:58:49 498417 add_embeddings <== vectordb='Chroma' ids=['2-0', '2-1', '2-2', '2-3']
-DEBUG:root:Selected Row : {'selection': {'rows': [], 'columns': []}}
-DEBUG:root:Selected File : None
-DEBUG:urllib3.connectionpool:Resetting dropped connection: us.i.posthog.com
-DEBUG:urllib3.connectionpool:https://us.i.posthog.com:443 "POST /batch/ HTTP/11" 200 15
-DEBUG:root:Selected Row : {'selection': {'rows': [1], 'columns': []}}
-DEBUG:root:Selected File : captives_letter_credit.pdf
-DEBUG:root:ID : selected_id=2 selected_file='captives_letter_credit.pdf'
-INFO:root:Program Start
-INFO:root:Program Start
-INFO:root:Program Start
-INFO:root:Program Start
-DEBUG:root:3_view: pdf_path='app/static/docs/captives_letter_credit.pdf' doc_id=None page_num=0
-INFO:root:Program Start
-DEBUG:root:Selected Row : {'selection': {'rows': [], 'columns': []}}
-DEBUG:root:Selected File : None
-DEBUG:root:Selected Row : {'selection': {'rows': [1], 'columns': []}}
-DEBUG:root:Selected File : captives_letter_credit.pdf
-DEBUG:root:ID : selected_id=2 selected_file='captives_letter_credit.pdf'
-DEBUG:root:Selected Row : {'selection': {'rows': [1], 'columns': []}}
-DEBUG:root:Selected File : captives_letter_credit.pdf
-DEBUG:root:ID : selected_id=2 selected_file='captives_letter_credit.pdf'
-DEBUG:root:3_view: pdf_path='app/static/docs/captives_letter_credit.pdf' doc_id=2 page_num=0
-INFO:root:Program Start
-DEBUG:root:3_view: pdf_path='app/static/docs/captives_letter_credit.pdf' doc_id=2 page_num=0
-DEBUG:root:3_view: pdf_path='app/static/docs/captives_letter_credit.pdf' doc_id=2 page_num=0
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:11434
-DEBUG:root:Selected Row : {'selection': {'rows': [], 'columns': []}}
-DEBUG:root:Selected File : None
-DEBUG:root:3_view: pdf_path='app/static/docs/captives_letter_credit.pdf' doc_id=2 page_num=0
 DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
 DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
 DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
 DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
-DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
-DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
-DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
-DEBUG:httpx:load_verify_locations cafile='C:\\Users\\Govind\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem'
-DEBUG:urllib3.connectionpool:http://localhost:11434 "POST /api/generate HTTP/11" 200 None

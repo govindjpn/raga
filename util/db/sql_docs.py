@@ -52,7 +52,9 @@ def sql_add_doc(doc_info) :
         return doc_id 
 
     except Exception as E : 
-        print (f"{E} add_docs :: {insert_str} ")
+        log.log_error (f"{E} add_docs :: {insert_str} ")    
+        traceback.print_exc()    
+        return None
 
 
 def sql_add_doc_chunk(doc_id, chunk_id, chunk ) : 
@@ -63,7 +65,9 @@ def sql_add_doc_chunk(doc_id, chunk_id, chunk ) :
         return doc_id 
 
     except Exception as E : 
-        print (f"{E} add_doc_chunk :: {insert_str} ")
+        log.log_error (f"{E} add_doc_chunk :: {insert_str} ")
+        traceback.print_exc()
+        return None
 
 
 
@@ -76,8 +80,9 @@ def sql_add_doc_meta(doc_id, key, value) :
         return doc_id 
 
     except Exception as E : 
-        print (f"{E} add_doc_meta :: {insert_str} ")
-
+        log.log_error (f"{E} add_doc_meta :: {insert_str} ")
+        traceback.print_exc()
+        return None
 
 def sql_update_summary(doc_id, summary ) : 
     try : 
@@ -86,7 +91,9 @@ def sql_update_summary(doc_id, summary ) :
         return doc_id 
 
     except Exception as E : 
-        print (f"{E} add_doc_chunk :: {update_str} ")
+        log.log_error (f"{E} add_doc_chunk :: {update_str} ")
+        traceback.print_exc()
+        return None 
 
 def sql_get_doc_name(doc_id): 
     select_str = "select doc_name from foi_doc_detail  where doc_id = " + str(doc_id)  
@@ -171,7 +178,7 @@ def sql_get_doc_summary (doc_id : int)  -> str:
         row =  sql.get_one(select_str)
         return row[0] if row is not None else ""
     except Exception as E : 
-        print (f"sql_get_doc_summary {E} :: {select_str} ")
+        log.log_error (f"sql_get_doc_summary {E} :: {select_str} ")
         traceback.print_exc()
         return None 
 
