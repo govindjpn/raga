@@ -48,20 +48,20 @@ def load_labels():
     
 label_dict = load_labels()
 
-def msg(lang, label, **kwargs):
-    if label.upper() in label_dict.keys():        
-        label = label.upper()
+def msg(lang, lbl, **kwargs):
+    if lbl.upper() in label_dict.keys():        
+        lbl = lbl.upper()
         match lang:
             case "ta":
-                s = label_dict[label][3]
+                s = label_dict[lbl][3]
             case "ja":
-                s = label_dict[label][2]
+                s = label_dict[lbl][2]
             case "es":
-                s = label_dict[label][4]
+                s = label_dict[lbl][4]
             case _:         
-                s = label_dict[label][1] #s = en.get(label, **kwargs)
+                s = label_dict[lbl][1] #s = en.get(label, **kwargs)
     else :
-        s = label
+        s = lbl
     for k, v in kwargs.items() :
         s = s.replace("{" + k + "}", msg(lang,v)) 
     return s
