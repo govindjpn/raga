@@ -9,7 +9,8 @@ Copyright           : All rights Reserved to KIKU
 '''
 
 import util.db.sql_basic as sql
-import util.session as session, config as cfg
+import util.session as session
+import util.config as cfg
 
 
 
