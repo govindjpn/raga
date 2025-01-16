@@ -12,7 +12,7 @@ import bcrypt
 
 def sql_add_user(user_id, user_name, user_password, user_role, user_group, user_external_id) : 
     try : 
-        insert_str = "insert into foi_user ('user_id', 'user_name', 'user_password', " + \
+        insert_str = "insert into doc_user ('user_id', 'user_name', 'user_password', " + \
             " 'user_role', 'user_group', 'user_external_id', 'user_active_flg' )" + \
             " values ('" + user_id + "','" + user_name + "','" + user_password + "','" + user_role + "','" + \
                          user_group + "','" + user_external_id + "', 'Y' )"
@@ -22,12 +22,12 @@ def sql_add_user(user_id, user_name, user_password, user_role, user_group, user_
         print (f"{E} add_user :: {insert_str}")
 
 def sql_get_user(user_id): 
-    select_str = "select user_password, user_name, user_active_flg from foi_user  where user_id = '" + user_id + "'" 
+    select_str = "select user_password, user_name, user_active_flg from doc_user  where user_id = '" + user_id + "'" 
     return sql.get_one(select_str)
 
 
 def sql_delete_user (user_id) : 
-    update_str = "update foi_user set user_active_flg = 'N' where user_id = '" + user_id + "'" 
+    update_str = "update doc_user set user_active_flg = 'N' where user_id = '" + user_id + "'" 
     sql.update(update_str)
 
 if __name__ == "__main__" : 
