@@ -138,20 +138,20 @@ def show_login_page(lang="en"):
     choice = st.selectbox(lbl.msg(lang, "Login / Signup"), ("Login", "Signup")) 
     if choice == "Login":
         #print ("show_login_page :: Choice Login" )
-        email = st.text_input("Email Address")
-        password = st.text_input("Password", type="password")
+        email = st.text_input(lbl.msg(lang,"Email Address"))
+        password = st.text_input(lbl.msg(lang,"Password"), type="password")
         if st.button("Login" ) : 
             #print (f"show_login_page :: Login Clicked {email=} ::{password=} " )
             login_clicked(email, password) 
         #print (f"show_login_page :: {email=} ::{password=} " )
     else : 
-        email = st.text_input("Email Address")
-        password = st.text_input("Password", type="password")
-        verify_password = st.text_input("Reenter Password", type="password")
-        username = st.text_input("How do we call you?") 
+        email = st.text_input(lbl.msg(lang,"Email Address"))
+        password = st.text_input(lbl.msg(lang,"Password"), type="password")
+        verify_password = st.text_input(lbl.msg(lang,"Reenter Password"), type="password")
+        username = st.text_input(lbl.msg(lang,"How do we call you?")) 
 
         if verify_password != password:
-            st.error ("Please reenter password")
+            st.error (lbl.msg(lang,"Please reenter password"))
         st.button("Create User", on_click =signup_clicked, args=(email, password, username))
     #print ("Exiting show_login_page")       
 
@@ -161,23 +161,23 @@ def logout_clicked():
     session.set_value(session.USER_ID, "") 
     session.set_value(session.USER_NAME, "")
 
-def show_logout_page(): 
+def show_logout_page(lang="en"): 
     #html.loginSection.empty()
     #with html.logOutSection:
-        st.button("Logout", key="logout", on_click=logout_clicked)   
+        st.button(lbl.msg(lang,"Logout"), key="logout", on_click=logout_clicked)   
 
 
-def login_clicked(email, password): 
+def login_clicked(email, password,lang="en"): 
     #print (f"Login Clicked :: {email=} ")
     if not user.validate_emailID(email) : 
         #print (f"{email=} :: Email not in proper format ")
         session.set_value(session.LOGGED_IN, False) 
-        show_error("Please enter the email ID in the format <user>@<domain>.<suffix>")
+        show_error(lbl.msg(lang,"EMAIL_FORMAT_ERROR"))
     else :
         if (user_details := user.get_user (email)) is None: 
             #print (f"{user_details=} :: User not found in DB ")
             session.set_value(session.LOGGED_IN, False) 
-            show_error("Email / Password incorrect") 
+            show_error(lbl.msg(lang,"Email / Password incorrect"))
         else : 
             db_hashedpw, user_name, active_flg  = user_details 
             if user.check_password(password, db_hashedpw):
@@ -187,21 +187,21 @@ def login_clicked(email, password):
                 if active_flg == "Y" :
                     st.rerun() #show_main_page()
                 else: 
-                    show_error("Email / Password incorrect.") 
+                    show_error(lbl.msg(lang,"Email / Password incorrect.") )
 
 
-def signup_clicked(email, password, username): 
+def signup_clicked(email, password, username,lang="en"): 
     if not user.validate_emailID(email):
-        st.error("Please enter the email ID in the format <user>@<domain>.<suffix>")
+        st.error(lbl.msg(lang,"EMAIL_FORMAT_ERROR"))
     else : 
         if not user.validate_username(username):
-            show_error("Please enter the name within 20 characters")
+            show_error(lbl.msg(lang,"NAME_FORMAT_ERROR"))
         else : 
             hashedpw = user.hash_password(password)
             user_id = user.sql_add_user(email, username,  hashedpw, "", "", "")
             session.set_value (session.LOGGED_IN, True) 
             session.set_value (session.USER_ID, email) 
-            show_success("Account Created successfully")
+            show_success(lbl.msg(lang,"ACCOUNT_CREATION_SUCCESS"))
             show_main_page()
 
 def switch_page():
