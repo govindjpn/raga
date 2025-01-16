@@ -179,11 +179,13 @@ def login_clicked(email, password,lang="en"):
             session.set_value(session.LOGGED_IN, False) 
             show_error(lbl.msg(lang,"Email / Password incorrect"))
         else : 
-            db_hashedpw, user_name, active_flg  = user_details 
+            db_hashedpw, user_name, user_lang, active_flg  = user_details 
             if user.check_password(password, db_hashedpw):
                 session.set_value(session.LOGGED_IN, True) 
                 session.set_value(session.USER_ID, email) 
                 session.set_value(session.USER_NAME, user_name) 
+                session.set_value(session.LANGUAGE, user_lang) 
+                
                 if active_flg == "Y" :
                     st.rerun() #show_main_page()
                 else: 

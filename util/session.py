@@ -9,6 +9,7 @@ DOC_ID = "doc_id"
 DOCS_DF = "docs_df"
 EMBEDDING_MODEL = "embedding_model"
 LOGGED_IN = "logged_in"
+LANGUAGE="language"
 PDF_FILE_NAME = "pdf_file_name"
 PDF_PAGE_COUNT = "pdf_page_count"
 PDF_PAGE_NUM = "pdf_page_num"
@@ -26,6 +27,7 @@ session_keys = [CHAT_HISTORY,
                 DOC_ID,
                 DOCS_DF, 
                 EMBEDDING_MODEL, 
+                LANGUAGE,
                 LOGGED_IN, 
                 PDF_FILE_NAME, 
                 PDF_PAGE_COUNT,
@@ -48,6 +50,7 @@ def initialize () :
         st.session_state[DOC_ID] = None
         st.session_state[DOCS_DF] = None
         st.session_state[EMBEDDING_MODEL] = ""
+        st.session_state[LANGUAGE] = "en"
         st.session_state[LOGGED_IN] = False
         st.session_state[PDF_FILE_NAME] = ""
         st.session_state[PDF_PAGE_COUNT] = ""

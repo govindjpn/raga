@@ -12,17 +12,18 @@ import bcrypt
 
 def sql_add_user(user_id, user_name, user_password, user_role, user_group, user_external_id) : 
     try : 
+        user_lang = "en"
         insert_str = "insert into doc_user ('user_id', 'user_name', 'user_password', " + \
-            " 'user_role', 'user_group', 'user_external_id', 'user_active_flg' )" + \
+            " 'user_role', 'user_group', 'user_external_id', 'user_lang', 'user_active_flg' )" + \
             " values ('" + user_id + "','" + user_name + "','" + user_password + "','" + user_role + "','" + \
-                         user_group + "','" + user_external_id + "', 'Y' )"
+                         user_group + "','" + user_external_id + "','" + user_lang + "', 'Y' )"
         sql.insert(insert_str)
 
     except Exception as E : 
         print (f"{E} add_user :: {insert_str}")
 
 def sql_get_user(user_id): 
-    select_str = "select user_password, user_name, user_active_flg from doc_user  where user_id = '" + user_id + "'" 
+    select_str = "select user_password, user_name, user_lang, user_active_flg from doc_user  where user_id = '" + user_id + "'" 
     return sql.get_one(select_str)
 
 

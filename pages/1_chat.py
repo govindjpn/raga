@@ -21,7 +21,9 @@ from langchain.chat_models import ChatOpenAI
 # from langchain_community.chat_models.huggingface import ChatHuggingFace
 from util import log, session, pdf 
 
-from util.html import htmlPages as html 
+from util.html import htmlPages as html
+from util.html import label as lbl
+ 
 from util.db import sql_docs as docs
 
 
@@ -145,10 +147,10 @@ def clear_chat_history():
 def load_questions():
     pass
 
-def main() : 
+def main(lang="en") : 
     
     if not (logged_in := session.get_value(session.LOGGED_IN)):
-        html.show_error ("Please login through the login page")
+        html.show_error (lbl.msg(lang, "NOT_LOGGEDIN_ERROR"))
         return
     load_dotenv()
 
@@ -193,4 +195,5 @@ def main() :
 
 
 if __name__ == "__main__" :
-    main()
+    lang = session.get_value(session.LANGUAGE)
+    main(lang)
