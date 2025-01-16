@@ -40,6 +40,7 @@ def sql_read_all_labels():
     
 def load_labels():
     if (label_list := sql_read_all_labels()) is None:
+        print (f"sql_read_all_labels :: {len(label_list)} records read")
         return None
     label_dict = {}
     for label in label_list:   
@@ -50,7 +51,7 @@ label_dict = load_labels()
 
 def msg(lang, lbl, **kwargs):
     global label_dict
-    
+
     if lbl.upper() in label_dict.keys():        
         lbl = lbl.upper()
         match lang:
