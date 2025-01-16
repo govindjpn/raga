@@ -8,8 +8,8 @@ Copyright           : All rights Reserved to KIKU
 '''
 
 import sqlite3 as sl
-from raga.util import config as cfg
-from raga.util.log import log_error, log_warning, log_debug
+from util import config as cfg
+from util.log import log_error, log_warning, log_debug
 
 DB_name = cfg.HOME + cfg.path[cfg.DB] + cfg.filename[cfg.DB]
 try :
