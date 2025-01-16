@@ -1,6 +1,5 @@
 #import pickle 
 import streamlit as st 
-import load_dotenv
 import re, string
 import random 
 import bcrypt 
@@ -34,7 +33,6 @@ def send_password_reset_mail (to_email ):
     # Taking inputs
     SENDER_EMAIL = ""
     SENDER_PASSWORD = ""
-    load_dotenv()
     email_sender = SENDER_EMAIL
     email_receiver = to_email
     subject = "Password Reset Request"
