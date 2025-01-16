@@ -18,6 +18,7 @@ CHROMA_DB = "chroma_db"
 DB = "db"
 DOCS = "docs"
 IMAGES = "images"
+LABELS= "labels"
 LOG = "log"
 MODEL = "model"
 
@@ -26,6 +27,7 @@ path = \
      DB               : 'db\\',
      DOCS             : 'static\\docs\\',
      IMAGES           : 'config\\',
+     LABELS           : 'db\\',
      LOG              : 'log\\',
      MODEL            : 'config\\',
   }
@@ -35,6 +37,7 @@ filename = \
      DB               : 'docs.db',
      DOCS             : '', 
      IMAGES           : 'raga.png',
+     LABELS           : 'labels.csv',
      LOG              : 'log.txt',
      MODEL            : 'model.csv'
   }

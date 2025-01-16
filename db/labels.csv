@@ -1,0 +1,13 @@
+label_key,label_en,label_ja,label_ta,label_es
+LOGIN / SIGNUP,Login / Signup,ログイン・登録,,
+EMAIL ADDRESS,Email Address,メール・アドレス,,
+PASSWORD,Password,パースワード,,
+REENTER PASSWORD,Reenter Password,パースワードの再入力,,
+HOW DO WE CALL YOU?,How do we call you?,お名前は,,
+PLEASE REENTER PASSWORD,Please reenter password,パースワードの再入力してください,,
+CREATE USER,Create User,登録,,
+EMAIL_FORMAT_ERROR,Please enter the email ID in the format <user>@<domain>.<suffix>,メール・アドレスを直してください。,,
+EMAIL_PASSWORD_ERROR,Email / Password incorrect,メール・パスワードが間違っています,,
+ACCOUNT_CREATION_SUCCESS,Account Created successfully,ユーザが登録されました,,
+CHAT_HEADER,Chat with your Documents :books:,文書とチャット :books:,,
+NOT_LOGGEDIN_ERROR,Please login through the login page,ログインしてください,,

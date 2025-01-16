@@ -9,13 +9,14 @@ Copyright           : All rights Reserved to KIKU
 '''
 
 import util.db.sql_basic as sql
-import util.session as session
+import util.session as session, config as cfg
 
 
 
 TAMIL="ta"
 ENGLISH="en"
 JAPANESE="ja"
+SPANISH="es"
 
 def get_language():
     lang = session.get_value(session.LANGUAGE)
@@ -24,7 +25,7 @@ def get_language():
     return ENGLISH
 
 def set_language(lang):
-    if lang in [TAMIL, ENGLISH, JAPANESE]:
+    if lang in [TAMIL, ENGLISH, JAPANESE, SPANISH]:
         session.set_value(session.LANGUAGE, lang)
     else : 
         session.set_value(session.LANGUAGE, ENGLISH) 
@@ -42,12 +43,21 @@ def sql_read_all_labels():
         return None
     
 def load_labels():
-    if (label_list := sql_read_all_labels()) is None:
-        print (f"sql_read_all_labels :: {len(label_list)} records read")
-        return None
+    # if (label_list := sql_read_all_labels()) is None:
+    #     print (f"sql_read_all_labels :: {len(label_list)} records read")
+    #     return None
+    # label_dict = {}
+    # for label in label_list:   
+    #     label_dict[label[0]]   = (label[1], label[2], label[3],label[4])
+
     label_dict = {}
-    for label in label_list:   
-        label_dict[label[0]]   = (label[1], label[2], label[3],label[4])
+    label_file_name = cfg.HOME + cfg.path[cfg.LABELS] + cfg.filename[cfg.LABELS]
+    with open(label_file_name, "r", encoding="utf-8") as f:
+        for line in f.readlines():     
+            lang_labels = line.split(",")
+            label_dict[lang_labels[0]] = (lang_labels[1], lang_labels[2], lang_labels[3],lang_labels[4])
+
+
     return label_dict
     
 label_dict = load_labels()
