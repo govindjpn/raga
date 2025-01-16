@@ -43,7 +43,7 @@ def load_labels():
         return None
     label_dict = {}
     for label in label_list:   
-        label_dict[label[0]]   = (label[1], label[2], label[3])
+        label_dict[label[0]]   = (label[1], label[2], label[3],label[4])
     return label_dict
     
 label_dict = load_labels()
@@ -53,11 +53,13 @@ def msg(lang, label, **kwargs):
         label = label.upper()
         match lang:
             case "ta":
-                s = label_dict[label][1]
+                s = label_dict[label][3]
             case "ja":
                 s = label_dict[label][2]
+            case "es":
+                s = label_dict[label][4]
             case _:         
-                s = label_dict[label][0] #s = en.get(label, **kwargs)
+                s = label_dict[label][1] #s = en.get(label, **kwargs)
     else :
         s = label
     for k, v in kwargs.items() :

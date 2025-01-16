@@ -71,12 +71,12 @@ def file_uploader(label, type, accept_multiple_files):
 
 def show_title(lang="en"): 
     #with headerSection: 
-    st.title (lbl.msg(lang, "RAG Chat with your Documents"))
+    st.title (lbl.msg(lang, "CHAT_HEADER"))
 
 def set_page_layout(layout):    
     st.set_page_config(layout=layout)
 
-def show_header(lang="en", page_title = "Know your Insurance") :
+def show_header(lang="en", page_title = "DOCS") :
     switch_page()
     st.set_page_config(page_title=lbl.msg(lang, page_title), page_icon=":books:", 
                         initial_sidebar_state="expanded", layout="wide",
@@ -86,7 +86,7 @@ def show_header(lang="en", page_title = "Know your Insurance") :
                         }
                     )
     st.write(css, unsafe_allow_html=True)
-    st.header(lbl.msg(lang, "Chat with your Documents :books:")) 
+    st.header(lbl.msg(lang, "CHAT_HEADER")) 
 
 def show_subheader(text): 
     st.subheader(text)
