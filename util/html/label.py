@@ -53,7 +53,7 @@ def load_labels():
 
     label_dict = {}
     #label_file_name = cfg.HOME + cfg.path[cfg.LABELS] + cfg.filename[cfg.LABELS]
-    label_file_name = "app/db/labels.csv"
+    label_file_name = "db/labels.csv"
     with open(label_file_name, "r", encoding="utf-8") as f:
         for line in f.readlines():     
             lang_labels = line.split(",")
