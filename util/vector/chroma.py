@@ -1,3 +1,4 @@
+import os 
 
 import chromadb
 from chromadb.config import DEFAULT_TENANT, DEFAULT_DATABASE, Settings
@@ -23,7 +24,7 @@ oai_vectorstore = Chroma("langchain_store", oai_embeddings)
 retriever = vectorstore.as_retriever()
 from raga.util import config as cfg
 
-chromadb_path = cfg.HOME + cfg.path[cfg.CHROMA_DB]  
+chromadb_path = os.path.join("docs", "chroma")  
 client = chromadb.PersistentClient(
     path=chromadb_path,
     settings=Settings(),
