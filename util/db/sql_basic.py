@@ -11,7 +11,8 @@ import sqlite3 as sl
 from util import config as cfg
 from util.log import log_error, log_warning, log_debug
 
-DB_name = cfg.HOME + cfg.path[cfg.DB] + cfg.filename[cfg.DB]
+#DB_name = cfg.HOME + cfg.path[cfg.DB] + cfg.filename[cfg.DB]
+DB_name = "db/docs.db"
 try :
     con = sl.connect(DB_name , check_same_thread=False)
     cur = con.cursor()
