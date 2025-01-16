@@ -33,7 +33,10 @@ def set_language(lang):
 def sql_read_all_labels():
     try :
         select_str = "select * from labels"
-        return sql.get_all(select_str)
+        if (rows := sql.get_all(select_str)) is None or len(rows) == 0:
+            print (f"sql_read_all_labels failed to read")
+            return None
+        return rows
     except Exception as e :
         print (f"{e} :: sql_read_all_labels failed {select_str}")
         return None
