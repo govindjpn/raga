@@ -16,6 +16,7 @@ DB_name = "db/docs.db"
 try :
     con = sl.connect(DB_name , check_same_thread=False)
     cur = con.cursor()
+    print ("DB = {DB_name} : File open success; sqlite Version {sl.sqlite_version} ")
 except Exception as E :
     print (f"DB = {DB_name} : File open failed {E}")
 
