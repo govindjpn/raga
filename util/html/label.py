@@ -49,6 +49,8 @@ def load_labels():
 label_dict = load_labels()
 
 def msg(lang, lbl, **kwargs):
+    global label_dict
+    
     if lbl.upper() in label_dict.keys():        
         lbl = lbl.upper()
         match lang:
