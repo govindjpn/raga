@@ -7,7 +7,7 @@ Purpose             : ConsolidationAlgorithms
 Copyright           : All rights Reserved to KIKU 
 '''
 
-from raga.util import log 
+from util import log 
 
 def get_consolidation (responses) :
     log.log_debug(f"get_consolidation -> :: {type(responses)} :: {str(responses)}")

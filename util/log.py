@@ -1,16 +1,16 @@
 '''
-Filename            : config.py
+Filename            : log.py
 Path                : util 
 Author              : KIKUGO 
 Created             : Oct 2024
-Purpose             : Manage the folder configuration of FOI    
+Purpose             : Manage the folder configuration   
 Copyright           : All rights Reserved to KIKU 
 '''
 
 import logging
 from datetime import datetime as dt
 
-from raga.util import config as cfg
+from util import config as cfg
 
 
 

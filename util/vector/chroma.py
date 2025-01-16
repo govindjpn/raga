@@ -3,11 +3,10 @@ import chromadb
 from chromadb.config import DEFAULT_TENANT, DEFAULT_DATABASE, Settings
 from chromadb.utils import embedding_functions
 from langchain_chroma.vectorstores import Chroma
-#from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings.openai import OpenAIEmbeddings
-import ollama 
 
-from raga.util import log
+
+from util import log
 
 '''
 By default, Chroma uses Sentence Transformers all-MiniLM-L6-v2 model to create embeddings 

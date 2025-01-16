@@ -9,6 +9,7 @@ Copyright           : All rights Reserved to KIKU
 
 import streamlit as st 
 from util.html.htmlTemplates import css, bot_template, user_template, pdf_display
+from util.html import label as lbl
 from util import session 
 from util import user
 
@@ -68,16 +69,16 @@ def file_uploader(label, type, accept_multiple_files):
     fu = st.file_uploader(label, type=type, accept_multiple_files=accept_multiple_files)
     return fu
 
-def show_title(): 
+def show_title(lang="en"): 
     #with headerSection: 
-    st.title ("RAG Chat with your Documents")
+    st.title (lbl.msg(lang, "RAG Chat with your Documents"))
 
 def set_page_layout(layout):    
     st.set_page_config(layout=layout)
 
-def show_header(page_title = "Know your Insurance") :
+def show_header(lang="en", page_title = "Know your Insurance") :
     switch_page()
-    st.set_page_config(page_title=page_title, page_icon=":books:", 
+    st.set_page_config(page_title=lbl.msg(lang, page_title), page_icon=":books:", 
                         initial_sidebar_state="expanded", layout="wide",
                         menu_items = {
                             'Get help' : 'http://en.wikipedia.org/wiki/insurance',
@@ -85,7 +86,7 @@ def show_header(page_title = "Know your Insurance") :
                         }
                     )
     st.write(css, unsafe_allow_html=True)
-    st.header("Chat with your Documents :books:")
+    st.header(lbl.msg(lang, "Chat with your Documents :books:")) 
 
 def show_subheader(text): 
     st.subheader(text)
@@ -131,10 +132,10 @@ def show_user(msg) :
     st.write(user_template.replace("{{MSG}}", msg), unsafe_allow_html=True)
 
 
-def show_login_page(): 
+def show_login_page(lang="en"): 
     #print ("Entering show_login_page")
 
-    choice = st.selectbox("Login / Signup", ("Login", "Signup")) 
+    choice = st.selectbox(lbl.msg(lang, "Login / Signup"), ("Login", "Signup")) 
     if choice == "Login":
         #print ("show_login_page :: Choice Login" )
         email = st.text_input("Email Address")

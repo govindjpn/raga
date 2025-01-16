@@ -8,8 +8,8 @@ Purpose             : Manage the labels in multiple languages
 Copyright           : All rights Reserved to KIKU 
 '''
 
-import iku.util.db.sql_basic as sql
-import iku.util.session as session
+import util.db.sql_basic as sql
+import util.session as session
 
 
 
@@ -32,7 +32,7 @@ def set_language(lang):
 
 def sql_read_all_labels():
     try :
-        select_str = "select * from label_main"
+        select_str = "select * from labels"
         return sql.get_all(select_str)
     except Exception as e :
         print (f"{e} :: sql_read_all_labels failed {select_str}")
