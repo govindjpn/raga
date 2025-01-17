@@ -51,6 +51,16 @@ def add_embeddings (vectordb, ids, embeddings, documents, metadatas) :
 
     log.log_write(f"add_embeddings <== {vectordb=} {ids=}")
 
+def delete_embeddings (vectordb, ids) : 
+    log.log_write(f"delete_embeddings ==> {vectordb=} {ids=}")
+    existing_id = collection.get (ids = ids)
+    if existing_id is not None: 
+        collection.delete(ids=ids) 
+    else : 
+        log.log_write(f"delete_embeddings (#001) :  {ids=} Already deleted")
+
+    log.log_write(f"delete_embeddings <== {vectordb=} {ids=}")
+
 def delete_item (item):
     collection.delete(item)
 
