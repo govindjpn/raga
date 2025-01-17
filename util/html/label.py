@@ -71,13 +71,13 @@ def msg(lang, lbl, **kwargs):
         lbl = lbl.upper()
         match lang:
             case "ta":
-                s = label_dict[lbl][3]
-            case "ja":
                 s = label_dict[lbl][2]
+            case "ja":
+                s = label_dict[lbl][1]
             case "es":
-                s = label_dict[lbl][4]
+                s = label_dict[lbl][3]
             case _:         
-                s = label_dict[lbl][1] #s = en.get(label, **kwargs)
+                s = label_dict[lbl][0] #s = en.get(label, **kwargs)
     else :
         s = lbl
     for k, v in kwargs.items() :

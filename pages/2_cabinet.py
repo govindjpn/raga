@@ -78,15 +78,8 @@ def show_load_menu() :
                     #result = llm.summarize_file(pdf_file, "stuff")
                     #docs.sql_update_summary()
 
-def show_table() : 
+def show_table(docs_list) : 
     with col_docs: 
-        user_id = session.get_value(session.USER_ID)
-        if user_id is None: 
-            st.error("Please Login again to see the file list ")
-            return 
-        if (docs_list := docs.sql_get_doc_list(user_id)) is None:   
-            st.error("No files to show; please upload a file using the read button")
-            return 
         #docs_addl_df = docs.sql_get_doc_list(user_id, "ADDL")
         #state_set = sorted(set(list(docs_addl_df["state"])))
 
@@ -122,6 +115,14 @@ def show_table() :
             html.show_view_button()
             if (summary := docs.sql_get_doc_summary(selected_id)) is not None:
                 show_summary(summary)
+            delete_button = html.get_button("Delete")
+            if delete_button: 
+                ## get the user to type the file name explicitly for confirmation 
+                html.show_message("Are you sure you want to delete this file?")
+                file_name = html.get_text_input("Please type the file name to confirm the deletion")                
+                if file_name == selected_file :
+                        docs.sql_delete_doc(selected_id)
+                
 
 def show_summary(summary=None): 
     with col_summary : 
@@ -137,7 +138,14 @@ if __name__ == "__main__" :
         html.show_error ("Please login through the login page")
     else :
         show_load_menu()
-        show_table()
+        user_id = session.get_value(session.USER_ID)
+        if user_id is None: 
+            st.error("Please Login again to see the file list ")
+        else :
+            if ( docs_list := docs.sql_get_doc_list(user_id)) is None:   
+                st.error("No files to show; please upload a file using the read button")
+            else :   
+                show_table(docs_list)
    
 
 

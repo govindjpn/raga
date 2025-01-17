@@ -26,5 +26,6 @@ def app():
        
 
 if __name__ == "__main__":
-    
+    import sys
+    print(sys.version_info)
     app()
