@@ -14,6 +14,10 @@ import os
 HOME = "C:\\python\\lib\\raga\\"
 DEV_HOME = "C:\\python\\lib\\raga\\"
 
+
+OLLAMA = True
+
+
 CHROMA_DB = "chroma_db"
 DB = "db"
 DOCS = "docs"

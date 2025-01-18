@@ -8,11 +8,14 @@ Copyright           : All rights Reserved to KIKU
 '''
 
 import util.log as log 
+import util.config as cfg
 
 from langchain_community.embeddings import OpenAIEmbeddings 
 #from langchain_community.embeddings import HuggingFaceInstructEmbeddings
 from langchain_chroma.vectorstores import Chroma 
-import ollama 
+
+if cfg.OLLAMA :
+    import ollama 
 
 
 #import raga.util.models.rag_huggingface as rag_huggingface 
@@ -31,11 +34,12 @@ def get_embeddings(model, vectordb, text_chunks):
             #case "Gemma" :
             #    embeddings = HuggingFaceInstructEmbeddings(model_name = "hkunlp/instructor-xl")      
             case "Llama3.1" :
-                embeddings = []
-                for index, chunk in enumerate(text_chunks): 
-                    result = ollama.embeddings(model="mxbai-embed-large", prompt=chunk)
-                    embeddings.append(result ["embedding"])
-                    #print (f"Get Embeddings Llama 3.1 :: {type(embeddings)} :: {len(embeddings)}  ")
+                if cfg.OLLAMA :
+                    embeddings = []
+                    for index, chunk in enumerate(text_chunks): 
+                        result = ollama.embeddings(model="mxbai-embed-large", prompt=chunk)
+                        embeddings.append(result ["embedding"])
+                        #print (f"Get Embeddings Llama 3.1 :: {type(embeddings)} :: {len(embeddings)}  ")
             case _ : 
                 embeddings = OpenAIEmbeddings()        
              
